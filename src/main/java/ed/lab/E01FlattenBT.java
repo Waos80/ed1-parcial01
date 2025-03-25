@@ -3,13 +3,13 @@ package ed.lab;
 import java.util.ArrayList;
 
 public class E01FlattenBT {
-    private void inOrder(TreeNode<Integer> root, ArrayList<Integer> list) {
+    private void preOrder(TreeNode<Integer> root, ArrayList<Integer> list) {
         if (root == null) {
             return;
         }
         list.add(root.value);
-        inOrder(root.left, list);
-        inOrder(root.right, list);
+        preOrder(root.left, list);
+        preOrder(root.right, list);
     }
 
     private void buildFlatTree(TreeNode<Integer> root, ArrayList<Integer> inorder) {
@@ -24,7 +24,7 @@ public class E01FlattenBT {
     public void flatten(TreeNode<Integer> root) {
 
         ArrayList<Integer> inorder = new ArrayList<>();
-        inOrder(root, inorder);
+        preOrder(root, inorder);
 
         buildFlatTree(root, inorder);
     }
