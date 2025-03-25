@@ -7,7 +7,6 @@ public class E01FlattenBT {
         if (root == null) {
             return;
         }
-
         list.add(root.value);
         inOrder(root.left, list);
         inOrder(root.right, list);
